@@ -1,0 +1,45 @@
+<%- include header %>
+
+<div class="main">
+	<div class="left-content">
+		<div class="panel">
+			<ul class="breadcrumb">
+				<li><a href="/">首页</a> <span class="divider">/</span></li>
+				<li>话题详情</li>
+			</ul>
+			<div class="box-content-in">	
+			  	<div class="topicTitle"><%= topic.title %></div>
+			  	<div class="topicInfo">作者：<%= topic.username %>&nbsp;&nbsp;&nbsp;&nbsp;发布时间：<%= topic.time %></div>
+			  	<div class="line"></div>
+			  	<div class="topicContent"><%- topic.content %></div>
+			</div>			
+		</div>
+
+		<div class="panel">
+			<div class="box-header"><strong>添加回复</strong></div>			
+			<div class="box-content-in">
+								
+				<div class="block"></div>
+				<form method="post" action="/topic/:replay" > 					
+					<div class="control-group">  
+				       	<div class="controls">  
+				         	<textarea rows="4" class="span8" name="message" id="message"></textarea> 
+				         	<input type="hidden" name="topicid"  value="<%= topic.topicid %>"/> 
+				       	</div> 
+				    </div> 				  	
+					<div class="control-group">
+				       	<button type="submit" class="btn btn-primary" ><i class="icon-comment icon-white"></i> 回复</button> 
+				    </div>				  		  	
+				</form>	
+			</div>				
+		</div>		
+		 
+	</div>
+
+	<div class="right-bar">
+
+	</div>
+	<div class="clear"></div>
+</div>
+
+<%- include footer %>

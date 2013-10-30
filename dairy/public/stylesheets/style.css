@@ -1,0 +1,34 @@
+body {
+  
+  font: 14px "Helvetica Neue",Helvetica,"Microsoft Yahei","Wenquanyi Micro Hei",Arial,sans-serif;;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.clear{ float: none; clear: both;}
+
+.main{ width: 1170px; margin: 0 auto; min-height: 500px; padding: 0px 0px 10px 0px; padding-top: 10px;}
+.left-content{ float:left; width: 840px; min-height: 500px;}
+.panel{ float: left; background: hsla(0,0%,100%,1); width: 100%; min-height: 100px; box-shadow: 0 0 1px hsl(0,0%,40%); margin-bottom: 8px;}
+.box-header{ padding: 7px 10px; background-color: hsl(0,0%,93%);}
+.clearfix{ line-height: 200%;}
+#create_topic_btn{ float:right;}
+.block{ width: 100%; height: 10px;}
+.box-content{ padding: 7px 10px;}
+.box-content-in{ width: 800px; padding: 0px 20px 10px 20px; float: left;}
+.articleList{ float: left; width: 100%; height: 48px; padding: 1px 0px; border-bottom: 1px solid #E6E6E6; line-height: 48px;}
+.articleList .img{ vertical-align: middle; width: 58px; text-align: center; float: left;}
+.articleList .title{ float: left; width: 600px;}
+.articleList .author{ float: left; width: 80px; color: hsl(0,7%,70%);}
+.articleList .time{ float: left; width: 100px; color: hsl(0,7%,70%);}
+
+.topicTitle{ width: 100%; float: left; height: 30px; line-height: 30px; font-size: 20px; font-weight: bold; }
+.topicInfo{ width: 100%; float: left; height: 20px; line-height: 30px; font-size: 12px; color: hsl(0,7%,70%);}
+.topicContent{ width: 100%; float: left; line-height: 20px; padding-bottom: 10px;}
+.line{ float: left; width: 100%; height: 10px;  border-bottom: 1px solid #ccc; margin-bottom: 10px;}
+.userInfo{ width: 100%; padding-bottom: 5px;}
+
+
+.right-bar{ width: 320px; min-height: 500px; float: right;}

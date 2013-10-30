@@ -1,0 +1,53 @@
+<%- include header %>
+
+<div class="main">
+	<div class="left-content">
+		<div class="panel">
+		  	
+	  		<ul class="breadcrumb">
+				<li><a href="/">首页</a> <span class="divider">/</span></li>
+				<li>话题发布</li>
+			</ul>
+		  	
+		  	<div class="box-content-in">
+				<form method="post" action="/publish" >
+					<div class="control-group">  
+				       	<label  class="control-label" for="title"><strong> 标题</strong></label>  
+				       	<div class="controls">  
+				         	<input type="text" class="span8" name="title" id="title">  
+				       	</div> 
+				    </div> 					
+					<div class="control-group">  
+				       	<label  class="control-label" for="content"><strong> 内容</strong>&nbsp;&nbsp;<abbr title="使用Markdown编辑器，详见右侧"><small>attr</small></abbr></label>  
+				       	<div class="controls">  
+				         	<textarea rows="8" class="span8" name="content" id="content"></textarea>  
+				       	</div> 
+				    </div> 				  	
+					<div class="control-group">
+				       	<button type="submit" class="btn btn-success" ><i class="icon-comment icon-white"></i> 发布</button> 
+				    </div>				  	
+				  	
+				</form>		  		
+		  	</div>
+		</div>		
+		
+	</div>
+	<div class="right-bar">
+		<div class="panel">
+		  	<div class="box-header">
+		  		<strong>markdown语法参考</strong>
+		  	</div>
+		  	<div class="box-content">
+		  		<div class="userInfo">换行：两个空格</div>
+				<div class="userInfo">分段：一个空行</div>
+				<div class="userInfo">斜体：*斜体*</div>
+				<div class="userInfo">粗体：**粗体**</div>
+				<div class="userInfo">代码：行首四个空格</div>
+				<div class="userInfo">链接：[文字](url)</div>
+				<div class="userInfo">图片：![alt 文字](url)</div>
+				<div class="userInfo">详见 <a href="http://www.ituring.com.cn/article/775">Markdown Wiki</a></div>
+		  	</div>
+		</div>		
+	</div>
+</div>
+<%- include footer %>
