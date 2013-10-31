@@ -28,21 +28,21 @@
 			  		个人信息
 			  	</div>
 			  	<div class="box-content">
-			  		<% if(locals.user){ %>
+			  		<% if(locals.user){%>
 			  		<div class="userInfo"><img src="../images/avatar.jpg" width="40" height="40" class="img-circle" title="<%= user.username %>" />&nbsp;<a href="#"><%= user.username %></a></div>
 			  		<div class="userInfo"></div>
 			  		<div class="userInfo"></div>
 			  		<div class="userInfo">注册时间：<%= user.time %></div>	
-			  		<% }else{ %>
+			  		<%}else{%>
 			  		<div class="userInfo"></div>
 			  		<div class="userInfo">欢迎光临MyDairy</div>
 					<div class="userInfo"></div>
 			  		<div class="userInfo">
 			  			<a href='/login'>
 			            	<button class='btn btn-success btn-mid'>登录</button>
-			        	</a><div><small>未注册用户，请先<a href="/reg">注册</a></small></div>
+			        	</a><small>&nbsp;未注册用户，请先<a href="/reg">注册</a></small>
 			    	</div>
-			  		<% } %>
+			  		<%}%>
 			  	</div>
 			</div>
 		</div>

@@ -26,14 +26,13 @@ Reply.prototype.save = function (callback){
 			return callback(err);
 		}
 
-		db.collection('reply',function(err, collection){
+		db.collection('topic',function(err, collection){
 			if(err){
 				mongodb.close();
 				return callback(err);
 			}
 
-			//collection.ensureIndex('user');
-			collection.insert(msg,{
+			collection.update({"topicid":msg.topicid},{$push:{"message":msg}},{
 				safe: true
 			},function(err, msg){
 				mongodb.close();
@@ -43,7 +42,7 @@ Reply.prototype.save = function (callback){
 	});
 }
 
-Reply.getReply = function(topicid, callback){
+/*Reply.getReply = function(topicid, callback){
 	mongodb.open(function(err, db){
 		if(err){
 			return callback(err);
@@ -73,5 +72,6 @@ Reply.getReply = function(topicid, callback){
 				callback(null, msgs);
 			})
 		})
-	})	
-}
+	})
+	
+}*/

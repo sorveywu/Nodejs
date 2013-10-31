@@ -15,6 +15,8 @@
 			</div>			
 		</div>
 
+		
+		<% if(locals.user){%>
 		<div class="panel">
 			<div class="box-header"><strong>添加回复</strong></div>			
 			<div class="box-content-in">
@@ -32,7 +34,29 @@
 				    </div>				  		  	
 				</form>	
 			</div>				
-		</div>		
+		</div>	
+		<%}%>
+		<div class="panel">
+			<div class="box-header"><strong>共<font color="red"><%= count %></font>条回复</strong></div>			
+			<div class="box-content-in">
+								
+				<% if(topic.message){ %>
+					<% topic.message.forEach(function(comment, index){ %>
+						<div class="reply">
+							<div class="replyinfo">
+								<div class="userimg"><img src="../images/avatar.jpg" width="40" height="40" class="img-circle" title="<%= comment.username %>" /></div>
+								<div class="username"><%= comment.username %>&nbsp;&nbsp;<%= comment.time %></div>
+								<div class="floor"><%= (index+1) %>楼</div>
+							</div>
+							<div class="msg">
+								<%- comment.message %>
+							</div>
+						</div>
+					<% }) %>
+				<% } %>				
+					
+			</div>				
+		</div>			
 		 
 	</div>
 

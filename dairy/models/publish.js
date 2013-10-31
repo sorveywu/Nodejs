@@ -1,9 +1,10 @@
 var mongodb = require('./db');
 
-function Publish(username, title, content, topicid, time){
+function Publish(username, title, content, topicid, time, message){
 	this.username  = username;
 	this.title = title;
 	this.content  = content;
+	this.message = message;
 	this.topicid = topicid == null ? (new Date().getTime().toString() + Math.floor(Math.random()*10000).toString()) : topicid;
 	if(time){
 		this.time = time;
@@ -102,10 +103,16 @@ Publish.getTopic = function(topicid, callback){
 					callback(err, null);
 				}
 				
-				var publish = new Publish(docs.username, docs.title, docs.content, docs.topicid, docs.time);	
+				var publish = new Publish(docs.username, docs.title, docs.content, docs.topicid, docs.time, docs.message);	
 				var now = publish.time;
             	publish.time = moment(now).format("YYYY-MM-DD HH:mm:ss");
-				
+            	if(publish.message){
+            		publish.message.forEach(function(doc, index){
+            			var now = doc.time; 
+            			doc.time = moment(now).format("MM-DD HH:mm");
+            		})
+            	}
+
 				callback(null, publish)
 			})
 		})

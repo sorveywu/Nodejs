@@ -148,21 +148,12 @@ module.exports = function(app){
       		res.render('topic', { 
       			title: topic.title,
         		topic: topic,
+        		count: typeof(topic.message)=='undefined'? 0 : topic.message.length,
 				user: req.session.user,
 				success:req.flash('success').toString(),
 	        	error : req.flash('error').toString()        		
       		}); 
     	}); 
-
-    	Reply.getReply(req.params.topicid, function(err, reply){
-    		if (err) { 
-	        	req.flash('error', err); 
-	         	return  res.redirect('/'); 
-	      	}
-	      	res.render('topic',{
-	      		reply: reply
-	      	})
-    	})
 	});
 
 	app.post('/topic/:reply', function(req, res){
