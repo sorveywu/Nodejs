@@ -105,13 +105,13 @@ Publish.getTopic = function(topicid, callback){
 				
 				var publish = new Publish(docs.username, docs.title, docs.content, docs.topicid, docs.time, docs.message);	
 				var now = publish.time;
-            			publish.time = moment(now).format("YYYY-MM-DD HH:mm:ss");
-            			if(publish.message){
-            				publish.message.forEach(function(doc, index){
-            					var now = doc.time; 
-            					doc.time = moment(now).format("MM-DD HH:mm");
-            				})
-            			}
+            	publish.time = moment(now).format("YYYY-MM-DD HH:mm:ss");
+            	if(publish.message){
+            		publish.message.forEach(function(doc, index){
+            			var now = doc.time; 
+            			doc.time = moment(now).format("MM-DD HH:mm");
+            		})
+            	}
 
 				callback(null, publish)
 			})
